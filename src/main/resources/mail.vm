@@ -1,0 +1,22 @@
+<html>  
+<body>  
+<div> 
+	${text}
+	<br/>
+	<br/>
+	<b>此邮件由解密系统自动发出！请勿回复！</b>
+	<br/>
+	<img src="cid:img1"/>
+	<br/>
+	<span style="font-size:9.0pt; font-family:宋体; color:#1F497D">
+	深圳市龙岗区坂田街道雪岗路2018号天安云谷产业园一期3栋A座23楼
+	</span>
+	<br/>
+	<span style="font-size:9.0pt; font-family:宋体; color:#1F497D">
+	23F, Building 3A, 1st Phase,Tian an Cloud Park, No.2018 Xuegang Rd., Longgang District, Shenzhen 518129, China. 
+	</span>
+	<br/>
+	<a><img src="cid:img2"/><img src="cid:img3"/></a>
+</div>
+</body>  
+</html> 

@@ -1,0 +1,23 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sekorm.dao.LeaderMailDao" >
+
+  <resultMap id="LeaderMailDaoMap" type="com.sekorm.entity.LeaderMail" >
+     <result column="email_address" property="leaderMail" jdbcType="VARCHAR"/>  
+  </resultMap>  
+  
+  <select id="findByMail" parameterType="HashMap" resultMap="LeaderMailDaoMap">
+  select lower(nvl(emp.EMAIL_ADDRESS,'0')) email_address
+		  from web_employees_v emp
+		 where emp.PERSON_ID in
+		       (select emp.UP1_BOSS_ID
+		          from web_employees_v emp
+		         where emp.STATUS = 1
+		           and lower(emp.EMAIL_ADDRESS) = lower(#{mail})
+		        union
+		        select emp.UP2_BOSS_ID
+		          from web_employees_v emp
+		         where emp.STATUS = 1
+		           and lower(emp.EMAIL_ADDRESS) = lower(#{mail}))
+  </select>
+  
+</mapper>
