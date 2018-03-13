@@ -60,7 +60,7 @@ public class POP3MailTask {
 	@Autowired
 	private LeaderMailDao leaderMailDao;
 	@Autowired
-    private LogDao logDao;
+    	private LogDao logDao;
 	@Value("#{configProperties['mail.path']}")
 	private String path;
 	@Value("#{configProperties['mail.userName']}")
